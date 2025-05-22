@@ -1,21 +1,21 @@
-**AWS Graviton4 Benchmark Setup for Amazon RDS**
+# AWS Graviton Benchmark Setup for Amazon RDS
 
-This AWS CloudFormation template allows you to replicate the benchmark setup to compare Graviton4 and Graviton3 processors on Amazon RDS. The template provisions the necessary infrastructure for benchmarking, as described in the [blog post](https://aws.amazon.com/blogs/database/leveling-up-amazon-rds-with-aws-graviton4-benchmarks/).
+This AWS CloudFormation template allows you to replicate the benchmark setup to compare Graviton4, Graviton3, and Graviton2 processors on Amazon RDS. The template provisions the necessary infrastructure for benchmarking, as described in the [blog post](https://issues.amazon.com/issues/DBBLOG-4568).
 
 ⚠ **Note:** This template is intended for benchmarking purposes only and is not suitable as a production workload baseline.
 
-**Costs**
+## Costs
 
 Using this setup incurs charges for the resources provisioned. Based on our configuration, the estimated cost is approximately $2.5/hour. To minimize expenses, ensure you delete the stack when testing concludes.
 
-**Prerequisites**
+## Prerequisites
 
 Before deploying this setup, ensure you have the following:
 
 - An active AWS account.
 - Sufficient permissions to create and manage AWS CloudFormation stacks.
 
-**How the Template Works**
+## How the Template Works
 
 The AWS CloudFormation template provisions the following:
 
@@ -39,22 +39,22 @@ The template outputs key parameters:
 - Admin username.
 - A direct Systems Manager session URL for accessing the EC2 instance.
 
-**Installation Instructions**
+## Installation Instructions
 
-1. Download the CloudFormation template file (rds-graviton4-benchmark.json) or upload it to an S3 bucket.
-2. Log in to your AWS account and navigate to a region supporting Graviton4-based RDS instances (e.g., **US East \[N. Virginia, Ohio\]**, **US West \[Oregon\]**, **Europe \[Frankfurt\]**).
+1. Download the CloudFormation template file (rds-graviton-benchmark.json) or upload it to an S3 bucket.
+2. Log in to your AWS account and navigate to a region supporting Graviton-based RDS instances (e.g., **US East [N. Virginia, Ohio]**, **US West [Oregon]**, **Europe [Frankfurt]**).
 3. Open the AWS CloudFormation console and choose **Create Stack > With new resources (standard)**. Alternatively, use the direct link: [AWS CloudFormation](https://console.aws.amazon.com/cloudformation/home#/stacks/create).
 4. Select **Template is ready**, upload your JSON file, and click **Next**.
-5. Enter a stack name, such as rds-graviton4-benchmark.
+5. Enter a stack name, such as rds-graviton-benchmark.
 6. Provide the required parameters:
-    - **RDS Instance Type**: Choose either m8g (Graviton4) or m7g (Graviton3).
+    - **RDS Instance Type**: Choose either m8g (Graviton4), m7g (Graviton3), or m6g (Graviton2).
     - **Database Engine**: Select one of the supported options: PostgreSQL (16.3), MySQL (8.0.39), or MariaDB (10.11.9).
-    - **SSM Parameter**:  It automatically resolves to the latest Amazon Linux AMI (do not modify this field).
+    - **SSM Parameter**: It automatically resolves to the latest Amazon Linux AMI (do not modify this field).
 7. Acknowledge that IAM resources may be created, then click **Submit**.
 8. Wait approximately 15 minutes for the stack to deploy.
 9. Once the setup is complete, the environment is ready to execute the benchmark as described in the blog post.
 
-**Cleanup**
+## Cleanup
 
 When you finish testing, save the benchmark results and delete the created resources by removing the CloudFormation stack. Follow these steps:
 
