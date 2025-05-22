@@ -1,4 +1,4 @@
-# AWS Graviton Benchmark Setup for Amazon RDS
+# AWS Graviton4 Benchmark Setup for Amazon RDS
 
 This AWS CloudFormation template allows you to replicate the benchmark setup to compare Graviton4, Graviton3, and Graviton2 processors on Amazon RDS. The template provisions the necessary infrastructure for benchmarking, as described in the [blog post](https://issues.amazon.com/issues/DBBLOG-4568).
 
