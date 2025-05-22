@@ -5,9 +5,10 @@
         "Default": "m8g",
         "AllowedValues": [
           "m8g",
-          "m7g"
+          "m7g",
+          "m6g"
         ],
-        "Description": "Select the RDS instance type you want to test. Can be m7g or m8g. The size will be xlarge"
+        "Description": "Select the RDS instance type you want to test. Can be m6g (Graviton 2), m7g (Graviton 3) or m8g (Graviton 4). The size will be xlarge"
       },
       "DBEngine": {
         "Type": "String",
