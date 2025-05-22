@@ -41,8 +41,8 @@ The template outputs key parameters:
 
 ## Installation Instructions
 
-1. Download the CloudFormation template file (rds-graviton-benchmark.json) or upload it to an S3 bucket.
-2. Log in to your AWS account and navigate to a region supporting Graviton-based RDS instances (e.g., **US East [N. Virginia, Ohio]**, **US West [Oregon]**, **Europe [Frankfurt]**).
+1. Download the CloudFormation template file (rds-graviton4-benchmark.json) or upload it to an S3 bucket.
+2. Log in to your AWS account and navigate to a region supporting Graviton4-based RDS instances (e.g., **US East \[N. Virginia, Ohio\]**, **US West \[Oregon\]**, **Europe \[Frankfurt\]**).
 3. Open the AWS CloudFormation console and choose **Create Stack > With new resources (standard)**. Alternatively, use the direct link: [AWS CloudFormation](https://console.aws.amazon.com/cloudformation/home#/stacks/create).
 4. Select **Template is ready**, upload your JSON file, and click **Next**.
 5. Enter a stack name, such as rds-graviton-benchmark.
